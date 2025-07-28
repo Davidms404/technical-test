@@ -30,3 +30,9 @@ In order to validate the list of stones, I chose to store in a map the list of p
 Before traversal, we seed stone 0 with a jump of length 0 to initialize the algorithm.
 
 Once you start traversing the list, you check that there is at least one possible jump associated with the current stone, then for each possible jump you verify k-1, k and k+1. In case the possible jump lands on another stone, it is then stored. This process repeats until finishing traversing the list and at the end, if there is at least one valid jump associated with the last position, then the frog will be able to cross the river.
+
+###Choice of Data Structures
+
+**Map**: allows you to associate each stone position with its set of possible jumps in O(1), and it also maintains insertion order, which matches the way you traverse positions.  
+
+**Set**: ensures that jumps for each stone are unique and supports insertion and lookup in O(1), avoiding duplicates and keeping the solution efficient.  
